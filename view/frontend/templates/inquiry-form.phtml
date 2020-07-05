@@ -1,0 +1,133 @@
+<form action="<?php echo $block->getFormAction() ?>" method="post" data-mage-init='{"validation":{}}'>
+    
+    <div class="control">
+        <label><?php echo __('Phone');?> *</label>
+        <input name="phone" 
+            type="text" 
+            placeholder="<?php echo __('Phone'); ?> *"
+            value="<?php echo $block->getPostValue('phone'); ?>"
+            data-validate='{"required":true}'
+            >
+    </div>
+
+    <div class="control">
+        <label><?php echo __('Firstname');?> *</label>
+        <input name="firstname" 
+            type="text" 
+            placeholder="<?php echo __('Firstname'); ?> *"
+            value="<?php echo $block->getPostValue('firstname'); ?>"
+            data-validate='{"required":true}'
+            >
+    </div>
+    
+    <div class="control">
+        <label><?php echo __('Lastname');?> *</label>
+        <input name="lastname" 
+            type="text" 
+            placeholder="<?php echo __('Lastname'); ?> *"
+            value="<?php echo $block->getPostValue('lastname'); ?>"
+            data-validate='{"required":true}'
+            >
+    </div>
+
+    <div class="control">
+        <label><?php echo __('Invoice Address');?> *</label>
+        <input name="invoice_address" 
+            type="text" 
+            placeholder="<?php echo __('Invoice Address'); ?> *"
+            value="<?php echo $block->getPostValue('invoice_address'); ?>"
+            data-validate='{"required":true}'
+            >
+    </div>
+
+    <div class="two-col-control">
+        <div class="control">
+            <label><?php echo __('Postcode');?> *</label>
+            <input name="postcode" 
+                type="text" 
+                placeholder="<?php echo __('Postcode'); ?> *"
+                value="<?php echo $block->getPostValue('postcode'); ?>"
+                data-validate='{"required":true}'
+                >
+        </div>
+
+        <div class="control">
+            <label><?php echo __('City');?> *</label>
+            <input name="city" 
+                type="text" 
+                placeholder="<?php echo __('City'); ?> *"
+                value="<?php echo $block->getPostValue('city'); ?>"
+                data-validate='{"required":true}'
+                >
+        </div>
+    </div>
+
+    <div class="control">
+        <label><?php echo __('Email');?> *</label>
+        <input name="email" 
+            type="text" 
+            placeholder="<?php echo __('Email'); ?> *"
+            value="<?php echo $block->getPostValue('email'); ?>"
+            data-validate='{"email":true}'
+            >
+    </div>
+
+    <div class="control gender">
+        <label>
+            <input name="gender" type="radio" value="male" checked="1">
+            <?php echo __('Male');?>
+        </label>
+        <label>
+            <input name="gender" type="radio" value="female">
+            <?php echo __('Female');?>
+        </label>
+    </div>
+
+    <div class="payment-method">
+        <p><strong>Payment Method</strong></p>
+
+        <div class="control payment-methods">
+            <label>
+                <input name="payment_method" type="radio" value="invoice" checked="1">
+                <?php echo __('Invoice');?>
+            </label>
+            <label>
+                <input name="payment_method" type="radio" value="visa">
+                <img src="<?php echo $block->getViewFileUrl('Prymag_IhabInquiryForm::images/visa.png'); ?>" />
+            </label>
+            <label>
+                <input name="payment_method" type="radio" value="mastercard">
+                <img src="<?php echo $block->getViewFileUrl('Prymag_IhabInquiryForm::images/mastercard.png'); ?>" />
+            </label>
+            <label>
+                <input name="payment_method" type="radio" value="paypal">
+                <img src="<?php echo $block->getViewFileUrl('Prymag_IhabInquiryForm::images/paypal.jpg'); ?>" />
+            </label>
+        </div>
+    </div>
+
+    <div class="control consent">
+        <label>
+            <input name="newsletter_subscribe" type="checkbox" value="1" />
+            <?php echo __('Subscribe to Newsletter');?>
+        </label>
+        <label>
+            <input name="newsletter_subscribe" type="checkbox" value="1" />
+            <?php 
+                $terms = '<a href="#" class="toggle-terms-modal">' . __('Terms') . '</a>';
+                $privacyPolicy = '<a href="#" class="toggle-policy-modal">' . __('Privacy Policy') . '</a>';
+            ?>
+            <?php echo __("I agree to the %1 and have read the %2", $terms, $privacyPolicy);?>
+
+            <?php echo $block->makeModal($block->getData('termsBlockId'), 'Terms', '.toggle-terms-modal'); ?>
+            <?php echo $block->makeModal($block->getData('policyBlockId'), 'Privacy Policy', '.toggle-policy-modal'); ?>
+            
+        </label>
+    </div>
+
+    <button type="submit" title="Lagre" class="action submit primary">
+        <span><?php echo __('Buy Now!'); ?></span>
+    </button>
+
+    
+</form>

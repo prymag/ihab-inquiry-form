@@ -1,0 +1,15 @@
+<div data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'title': jQuery.mage.__('<?php echo $block->getTitle(); ?>'),
+            'trigger': '<?php echo $block->getTrigger(); ?>',
+            'responsive': true,
+            'buttons': [{
+                text: jQuery.mage.__('Close'),
+                class: 'action'
+            }]
+        }}">
+    <div class="content">
+        <?php echo $block->getContent(); ?>
+    </div>
+</div>
