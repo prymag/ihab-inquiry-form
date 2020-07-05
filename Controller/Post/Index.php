@@ -7,7 +7,7 @@ use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\Action\Action;
 
 use Magento\Contact\Model\ConfigInterface;
-use Magento\Contact\Model\MailInterface;
+use Prymag\IhabInquiryForm\Model\MailInterface;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Controller\Result\Redirect;
@@ -61,6 +61,7 @@ class Index extends Action implements HttpPostActionInterface {
         # code...
         try {
             $this->sendEmail($this->validatedParams());
+            $this->messageManager->addSuccess(__("Success"));
         } catch (\Exception $e) {
             $this->messageManager->addErrorMessage($e->getMessage());
             $this->dataPersistor->set('inquiry_form', $this->getRequest()->getParams());
@@ -72,8 +73,7 @@ class Index extends Action implements HttpPostActionInterface {
             );
             $this->dataPersistor->set('contact_us', $this->getRequest()->getParams()); */
         }
-        die('We are here...');
-        return 'Hello world!!';
+        return $this->redirectBack();
     }
 
     /**
@@ -82,11 +82,10 @@ class Index extends Action implements HttpPostActionInterface {
      */
      private function sendEmail($post)
      {
-
-         /* $this->mail->send(
-             $post['email'],
-             ['data' => new DataObject($post)]
-         ); */
+        $this->mail->send(
+            $post['email'],
+            ['data' => new DataObject($post)]
+        );
      }
 
     /**
@@ -98,17 +97,11 @@ class Index extends Action implements HttpPostActionInterface {
          $request = $this->getRequest();
          //die($request->getPostValue('phone'));
 
+         /**
+          * @Todo: Serverside validation
+          */
          if (trim($request->getParam('phone')) === '') {
              throw new LocalizedException(__('Enter phone and try again.'));
-         }
-         if (trim($request->getParam('comment')) === '') {
-             throw new LocalizedException(__('Enter the comment and try again.'));
-         }
-         if (false === \strpos($request->getParam('email'), '@')) {
-             throw new LocalizedException(__('The email address is invalid. Verify the email address and try again.'));
-         }
-         if (trim($request->getParam('hideit')) !== '') {
-             throw new \Exception();
          }
  
          return $request->getParams();

@@ -3,13 +3,15 @@
 namespace Prymag\IhabInquiryForm\Block;
 
 use Magento\Framework\App\Request\DataPersistorInterface;
-
+use Prymag\IhabInquiryForm\Model\MailInterface;
 
 class InquiryForm extends \Magento\Framework\View\Element\Template
 {
     protected $_dataPersistor;
 
     protected $_modal;
+
+    protected $_mail;
 
     /**
      * @var array
@@ -20,10 +22,12 @@ class InquiryForm extends \Magento\Framework\View\Element\Template
         \Magento\Framework\View\Element\Template\Context $context,
         Modal $modal,
         DataPersistorInterface $dataPersistor,
+        MailInterface $mail,
         array $data = []
     ) {
         parent::__construct($context, $data);
 
+        $this->_mail = $mail;
         $this->_modal = $modal;
         $this->_dataPersistor = $dataPersistor;
     }
