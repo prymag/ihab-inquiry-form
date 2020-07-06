@@ -1,6 +1,17 @@
-<form action="<?php echo $block->getFormAction() ?>" method="post" data-mage-init='{"validation":{}}'>
+<form 
+    action="<?php echo $block->getFormAction() ?>" 
+    method="post" 
+    class="prymag-inquiry-form"
+    data-mage-init='{"validation":{}}'>
     
-    <div class="control">
+    <div class="product-info">
+        <h3 class="title"><?php echo $block->getData('title'); ?></h3>
+        <?php if ($block->getData('short_desc') != ''): ?>
+            <div class="desc"> - <?php echo $block->getData('short_desc'); ?></div>
+        <?php endif; ?>
+    </div>
+
+    <div class="control control-input">
         <label><?php echo __('Phone');?> *</label>
         <input name="phone" 
             type="text" 
@@ -10,7 +21,7 @@
             >
     </div>
 
-    <div class="control">
+    <div class="control control-input">
         <label><?php echo __('Firstname');?> *</label>
         <input name="firstname" 
             type="text" 
@@ -20,7 +31,7 @@
             >
     </div>
     
-    <div class="control">
+    <div class="control control-input">
         <label><?php echo __('Lastname');?> *</label>
         <input name="lastname" 
             type="text" 
@@ -30,7 +41,7 @@
             >
     </div>
 
-    <div class="control">
+    <div class="control control-input">
         <label><?php echo __('Invoice Address');?> *</label>
         <input name="invoice_address" 
             type="text" 
@@ -41,7 +52,7 @@
     </div>
 
     <div class="two-col-control">
-        <div class="control">
+        <div class="control control-input">
             <label><?php echo __('Postcode');?> *</label>
             <input name="postcode" 
                 type="text" 
@@ -51,7 +62,7 @@
                 >
         </div>
 
-        <div class="control">
+        <div class="control control-input">
             <label><?php echo __('City');?> *</label>
             <input name="city" 
                 type="text" 
@@ -62,7 +73,7 @@
         </div>
     </div>
 
-    <div class="control">
+    <div class="control control-input">
         <label><?php echo __('Email');?> *</label>
         <input name="email" 
             type="text" 
@@ -72,7 +83,7 @@
             >
     </div>
 
-    <div class="control gender">
+    <div class="control gender control-radio">
         <label>
             <input name="gender" type="radio" value="male" checked="1">
             <?php echo __('Male');?>
@@ -84,9 +95,9 @@
     </div>
 
     <div class="payment-method">
-        <p><strong>Payment Method</strong></p>
+        <p><strong><?php echo __('Payment Method');?></strong></p>
 
-        <div class="control payment-methods">
+        <div class="control payment-methods control-radio">
             <label>
                 <input name="payment_method" type="radio" value="invoice" checked="1">
                 <?php echo __('Invoice');?>
@@ -106,28 +117,42 @@
         </div>
     </div>
 
-    <div class="control consent">
+    <div class="control consent control-checkbox">
         <label>
-            <input name="newsletter_subscribe" type="checkbox" value="1" />
+            <input 
+                name="newsletter_subscribe" 
+                type="checkbox" 
+                value="1"  
+                data-validate='{"required":true}'
+                />
             <?php echo __('Subscribe to Newsletter');?>
         </label>
         <label>
-            <input name="newsletter_subscribe" type="checkbox" value="1" />
+            <input 
+                name="newsletter_subscribe" 
+                type="checkbox" 
+                value="1" 
+                data-validate='{"required":true}'
+                />
             <?php 
                 $terms = '<a href="#" class="toggle-terms-modal">' . __('Terms') . '</a>';
                 $privacyPolicy = '<a href="#" class="toggle-policy-modal">' . __('Privacy Policy') . '</a>';
             ?>
             <?php echo __("I agree to the %1 and have read the %2", $terms, $privacyPolicy);?>
-
-            <?php echo $block->makeModal($block->getData('termsBlockId'), 'Terms', '.toggle-terms-modal'); ?>
-            <?php echo $block->makeModal($block->getData('policyBlockId'), 'Privacy Policy', '.toggle-policy-modal'); ?>
-            
+            <div style="display:none;">
+                <?php echo $block->makeModal($block->getData('termsBlockId'), '.toggle-terms-modal'); ?>
+                <?php echo $block->makeModal($block->getData('policyBlockId'), '.toggle-policy-modal'); ?>
+            </div>
         </label>
     </div>
 
-    <button type="submit" title="Lagre" class="action submit primary">
+    <button type="submit" class="action submit primary">
         <span><?php echo __('Buy Now!'); ?></span>
     </button>
+
+    <div class="conditions-text">
+        <?php echo htmlspecialchars_decode($block->getData('conditions_text'));?>
+    </div>
 
     
 </form>

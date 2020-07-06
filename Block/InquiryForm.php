@@ -9,9 +9,7 @@ class InquiryForm extends \Magento\Framework\View\Element\Template
 {
     protected $_dataPersistor;
 
-    protected $_modal;
-
-    protected $_mail;
+    protected $_objectManager;
 
     /**
      * @var array
@@ -20,15 +18,13 @@ class InquiryForm extends \Magento\Framework\View\Element\Template
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        Modal $modal,
+        \Magento\Framework\ObjectManagerInterface $objectManager,
         DataPersistorInterface $dataPersistor,
-        MailInterface $mail,
         array $data = []
     ) {
         parent::__construct($context, $data);
 
-        $this->_mail = $mail;
-        $this->_modal = $modal;
+        $this->_objectManager = $objectManager;
         $this->_dataPersistor = $dataPersistor;
     }
 
@@ -59,11 +55,12 @@ class InquiryForm extends \Magento\Framework\View\Element\Template
          return '';
     }
 
-    public function makeModal($blockId, $title, $trigger)
+    public function makeModal($blockId, $trigger)
     {
         # code...
-        return $this->_modal
-            ->setTitle($title)
+        $modal = $this->_objectManager->create(Modal::class);
+
+        return $modal
             ->setContentBlockId($blockId)
             ->setTrigger($trigger)
             ->toHtml();

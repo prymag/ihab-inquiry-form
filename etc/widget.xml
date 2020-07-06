@@ -1,0 +1,41 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Prymag\IhabInquiryForm\Block\Widget\InquiryForm" id="prymag_ihab_inquiry_form">
+        <label>Prymag Inquiry Form</label>
+        <description>Custom Inquiry Form</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="true" visible="true" sort_order="10">
+                <label>Title</label>
+            </parameter>
+            <parameter name="short_desc" xsi:type="text" required="true" visible="true" sort_order="10">
+                <label>Short Description</label>
+            </parameter>
+            <parameter name="conditions_text" xsi:type="block" required="true" visible="true" sort_order="10">
+                <label>Conditions</label>
+                <block class="Prymag\IhabInquiryForm\Block\Adminhtml\Widget\TextArea"/>
+            </parameter>
+            <parameter name="termsBlockId" xsi:type="block" visible="true" required="true" sort_order="20">
+                <label translate="true">Terms</label>
+                <description>Choose the block that contains the text for the terms link.</description>
+                <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Block...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="policyBlockId" xsi:type="block" visible="true" required="true" sort_order="20">
+                <label translate="true">Policy</label>
+                <description>Choose the block that contains the text for the privacy policy link.</description>
+                <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Block...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
