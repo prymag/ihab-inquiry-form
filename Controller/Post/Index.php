@@ -1,13 +1,13 @@
 <?php
 
-namespace Prymag\IhabInquiryForm\Controller\Post;
+namespace Prymag\PurchaseForm\Controller\Post;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\Action\Action;
 
 use Magento\Contact\Model\ConfigInterface;
-use Prymag\IhabInquiryForm\Model\MailInterface;
+use Prymag\PurchaseForm\Model\MailInterface;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\Controller\Result\Redirect;
@@ -51,6 +51,7 @@ class Index extends Action implements HttpPostActionInterface {
     public function redirectBack()
     {
         # code...
+        /** @var Redirect $resultRedirect */
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
         $resultRedirect->setUrl($this->_redirect->getRefererUrl());
         return $resultRedirect;
@@ -66,12 +67,6 @@ class Index extends Action implements HttpPostActionInterface {
             $this->messageManager->addErrorMessage($e->getMessage());
             $this->dataPersistor->set('inquiry_form', $this->getRequest()->getParams());
             return $this->redirectBack();
-            die($e->getMessage());
-            /* $this->logger->critical($e);
-            $this->messageManager->addErrorMessage(
-                __('An error occurred while processing your form. Please try again later.')
-            );
-            $this->dataPersistor->set('contact_us', $this->getRequest()->getParams()); */
         }
         return $this->redirectBack();
     }

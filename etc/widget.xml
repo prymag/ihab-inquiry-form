@@ -1,6 +1,6 @@
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
-    <widget class="Prymag\IhabInquiryForm\Block\Widget\InquiryForm" id="prymag_ihab_inquiry_form">
+    <widget class="Prymag\PurchaseForm\Block\Widget\InquiryForm" id="prymag_ihab_inquiry_form">
         <label>Prymag Inquiry Form</label>
         <description>Custom Inquiry Form</description>
         <parameters>
@@ -12,7 +12,7 @@
             </parameter>
             <parameter name="conditions_text" xsi:type="block" required="true" visible="true" sort_order="10">
                 <label>Conditions</label>
-                <block class="Prymag\IhabInquiryForm\Block\Adminhtml\Widget\TextArea"/>
+                <block class="Prymag\PurchaseForm\Block\Adminhtml\Widget\TextArea"/>
             </parameter>
             <parameter name="termsBlockId" xsi:type="block" visible="true" required="true" sort_order="20">
                 <label translate="true">Terms</label>

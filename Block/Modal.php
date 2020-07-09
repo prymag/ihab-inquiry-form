@@ -1,6 +1,6 @@
 <?php
 
-namespace Prymag\IhabInquiryForm\Block;
+namespace Prymag\PurchaseForm\Block;
 
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Framework\View\Element\Template;
@@ -10,7 +10,7 @@ class Modal extends Template
 
     protected $_title = '';
 
-    protected $_template = 'Prymag_IhabInquiryForm::inquiry-form/modal.phtml';
+    protected $_template = 'Prymag_PurchaseForm::inquiry-form/modal.phtml';
 
     protected $_contentBlockId = 'terms';
 

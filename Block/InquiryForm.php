@@ -1,9 +1,9 @@
 <?php
 
-namespace Prymag\IhabInquiryForm\Block;
+namespace Prymag\PurchaseForm\Block;
 
 use Magento\Framework\App\Request\DataPersistorInterface;
-use Prymag\IhabInquiryForm\Model\MailInterface;
+use Prymag\PurchaseForm\Model\MailInterface;
 
 class InquiryForm extends \Magento\Framework\View\Element\Template
 {

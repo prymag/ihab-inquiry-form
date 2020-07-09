@@ -1,6 +1,6 @@
 <?php
 
-namespace Prymag\IhabInquiryForm\Block\Adminhtml\Widget;
+namespace Prymag\PurchaseForm\Block\Adminhtml\Widget;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Framework\Data\Form\Element\Factory;

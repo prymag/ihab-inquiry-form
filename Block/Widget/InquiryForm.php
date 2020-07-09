@@ -1,7 +1,7 @@
 <?php 
-namespace Prymag\IhabInquiryForm\Block\Widget;
+namespace Prymag\PurchaseForm\Block\Widget;
 
-use Prymag\IhabInquiryForm\Block\InquiryForm as ParentBlock;
+use Prymag\PurchaseForm\Block\InquiryForm as ParentBlock;
 use Magento\Widget\Block\BlockInterface; 
  
 class InquiryForm extends ParentBlock implements BlockInterface {
