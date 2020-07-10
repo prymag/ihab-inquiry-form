@@ -1,8 +1,8 @@
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
-    <widget class="Prymag\PurchaseForm\Block\Widget\InquiryForm" id="prymag_ihab_inquiry_form">
-        <label>Prymag Inquiry Form</label>
-        <description>Custom Inquiry Form</description>
+    <widget class="Prymag\PurchaseForm\Block\Widget\PurchaseForm" id="prymag_purcahse_form">
+        <label>Prymag Purchase Form</label>
+        <description>Custom Purchase Form</description>
         <parameters>
             <parameter name="title" xsi:type="text" required="true" visible="true" sort_order="10">
                 <label>Title</label>

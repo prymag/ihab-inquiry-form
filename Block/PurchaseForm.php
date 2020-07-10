@@ -5,7 +5,7 @@ namespace Prymag\PurchaseForm\Block;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Prymag\PurchaseForm\Model\MailInterface;
 
-class InquiryForm extends \Magento\Framework\View\Element\Template
+class PurchaseForm extends \Magento\Framework\View\Element\Template
 {
     protected $_dataPersistor;
 
@@ -44,8 +44,8 @@ class InquiryForm extends \Magento\Framework\View\Element\Template
     {
         //
         if (null === $this->postData) {
-            $this->postData = (array) $this->_dataPersistor->get('inquiry_form');
-            $this->_dataPersistor->clear('inquiry_form');
+            $this->postData = (array) $this->_dataPersistor->get('purchase_form');
+            $this->_dataPersistor->clear('purchase_form');
         }
 
         if (isset($this->postData[$key])) {

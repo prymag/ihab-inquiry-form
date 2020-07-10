@@ -10,7 +10,7 @@ class Modal extends Template
 
     protected $_title = '';
 
-    protected $_template = 'Prymag_PurchaseForm::inquiry-form/modal.phtml';
+    protected $_template = 'Prymag_PurchaseForm::purchase-form/modal.phtml';
 
     protected $_contentBlockId = 'terms';
 
