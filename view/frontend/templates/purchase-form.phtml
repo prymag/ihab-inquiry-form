@@ -3,6 +3,12 @@
     method="post" 
     class="prymag-purchase-form"
     data-mage-init='{"validation":{}}'>
+
+    <input type="text" name="merchant" value="<?php echo $block->getMerchant(); ?>" />
+    <input type="text" name="page" value="<?php echo $block->getPage(); ?>" />
+    <input type="text" name="campaignCode" value="<?php echo $block->getCampaignCode(); ?>" />
+    <input type="text" name="seller" value="<?php echo $block->getSeller(); ?>" />
+    <input type="text" name="country" value="<?php echo $block->getCountry(); ?>" />
     
     <div class="product-info">
         <h3 class="title"><?php echo $block->getData('title'); ?></h3>
@@ -140,8 +146,8 @@
             ?>
             <?php echo __("I agree to the %1 and have read the %2", $terms, $privacyPolicy);?>
             <div style="display:none;">
-                <?php echo $block->makeModal($block->getData('termsBlockId'), '.toggle-terms-modal'); ?>
-                <?php echo $block->makeModal($block->getData('policyBlockId'), '.toggle-policy-modal'); ?>
+                <?php echo $block->makeModal($block->getTermsBlockId(), '.toggle-terms-modal'); ?>
+                <?php echo $block->makeModal($block->getPolicyBlockId(), '.toggle-policy-modal'); ?>
             </div>
         </label>
     </div>
@@ -154,5 +160,5 @@
         <?php echo htmlspecialchars_decode($block->getData('conditions_text'));?>
     </div>
 
-    
+    <?php echo $block->getAnalytics(); ?>
 </form>

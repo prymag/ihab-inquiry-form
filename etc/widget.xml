@@ -10,13 +10,41 @@
             <parameter name="short_desc" xsi:type="text" required="true" visible="true" sort_order="10">
                 <label>Short Description</label>
             </parameter>
+            <parameter name="page_code" xsi:type="text" required="true" visible="true" sort_order="10">
+                <label>Page Code</label>
+            </parameter>
+
+            <parameter name="product_name" xsi:type="text" required="true" visible="true" sort_order="10">
+                <label>Product Name</label>
+            </parameter>
+            <parameter name="sku" xsi:type="text" required="true" visible="true" sort_order="10">
+                <label>SKU</label>
+            </parameter>
+            <parameter name="price" xsi:type="text" required="true" visible="true" sort_order="10">
+                <label>Price</label>
+            </parameter>
+            <parameter name="shipping" xsi:type="text" visible="true" sort_order="10">
+                <label>Shipping</label>
+            </parameter>
+            <parameter name="tax" xsi:type="text" visible="true" sort_order="10">
+                <label>Tax</label>
+            </parameter>
+
+            <parameter name="seller_code" xsi:type="text" visible="true" sort_order="10">
+                <label>Seller Code</label>
+                <description>Leave empty to use default Seller Code</description>
+            </parameter>
+            <parameter name="country_code" xsi:type="text" visible="true" sort_order="10">
+                <label>Country Code</label>
+                <description>Leave empty to use default Country Code</description>
+            </parameter>
             <parameter name="conditions_text" xsi:type="block" required="true" visible="true" sort_order="10">
                 <label>Conditions</label>
                 <block class="Prymag\PurchaseForm\Block\Adminhtml\Widget\TextArea"/>
             </parameter>
-            <parameter name="termsBlockId" xsi:type="block" visible="true" required="true" sort_order="20">
-                <label translate="true">Terms</label>
-                <description>Choose the block that contains the text for the terms link.</description>
+            <parameter name="termsBlockId" xsi:type="block" visible="true" sort_order="20">
+                <label translate="true">Block for Terms content</label>
+                <description>Leave empty to use default Terms content</description>
                 <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
                     <data>
                         <item name="button" xsi:type="array">
@@ -25,9 +53,9 @@
                     </data>
                 </block>
             </parameter>
-            <parameter name="policyBlockId" xsi:type="block" visible="true" required="true" sort_order="20">
-                <label translate="true">Policy</label>
-                <description>Choose the block that contains the text for the privacy policy link.</description>
+            <parameter name="policyBlockId" xsi:type="block" visible="true" sort_order="20">
+                <label translate="true">Block for Policy content</label>
+                <description>Leave empty to use default Privacy Policy content</description>
                 <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
                     <data>
                         <item name="button" xsi:type="array">

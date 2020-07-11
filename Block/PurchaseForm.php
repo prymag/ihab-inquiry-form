@@ -2,40 +2,21 @@
 
 namespace Prymag\PurchaseForm\Block;
 
-use Magento\Framework\App\Request\DataPersistorInterface;
-use Prymag\PurchaseForm\Model\MailInterface;
-
-class PurchaseForm extends \Magento\Framework\View\Element\Template
+class PurchaseForm extends Base
 {
-    protected $_dataPersistor;
-
-    protected $_objectManager;
-
     /**
      * @var array
      */
-     private $postData = null;
-
-    public function __construct(
-        \Magento\Framework\View\Element\Template\Context $context,
-        \Magento\Framework\ObjectManagerInterface $objectManager,
-        DataPersistorInterface $dataPersistor,
-        array $data = []
-    ) {
-        parent::__construct($context, $data);
-
-        $this->_objectManager = $objectManager;
-        $this->_dataPersistor = $dataPersistor;
-    }
+    private $postData = null;
 
     public function getFormAction()
     {
         # code...
-        return $this->getUrl('inquiry/post', ['_secure' => true]);
+        return $this->_helper->getPOSTUrl();
     }
 
     /**
-    * Get value from POST by key
+    * Get value from POST request by key
     *
     * @param string $key
     * @return string
@@ -55,22 +36,12 @@ class PurchaseForm extends \Magento\Framework\View\Element\Template
          return '';
     }
 
-    public function makeModal($blockId, $trigger)
+    public function getAnalyticsSection()
     {
         # code...
-        $modal = $this->_objectManager->create(Modal::class);
-
-        return $modal
-            ->setContentBlockId($blockId)
-            ->setTrigger($trigger)
+        return $this->_objectManager
+            ->create(Analytics::class)
             ->toHtml();
-    }
-
-    public function getModalBlockId($blockId)
-    {
-        # code...
-        $blockId = $this->getData($blockId);
-        return $blockId;
     }
 
 }
