@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="prymagbase" translate="label" sortOrder="10">
+            <label>Prymag</label>
+        </tab>
+        <section id="Prymag_PurchaseForm" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10" translate="label">
+            <label>Purchase Form</label>
+            <tab>prymagbase</tab>
+            <resource>Prymag_Base::system_config</resource>
+
+            <group 
+                id="defaults" 
+                translate="label" 
+                type="text" 
+                sortOrder="1"
+                showInDefault="1" 
+                showInWebsite="1" 
+                showInStore="1" >
+                <label>Defaults</label>
+                
+                    <field id="merchant_key" 
+                        translate="label" 
+                        sortOrder="10" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1" 
+                        type="text">
+                        <label>Merchant Key</label>
+                    </field>
+
+                    <field id="post_url" 
+                        translate="label" 
+                        sortOrder="10" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1" 
+                        type="text">
+                        <label>POST URL</label>
+                    </field>
+
+                    <field id="campaign_code" 
+                        translate="label" 
+                        sortOrder="10" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1" 
+                        type="text">
+                        <label>Campaign Code</label>
+                    </field>
+
+                    <field id="seller_code" 
+                        translate="label" 
+                        sortOrder="10" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1" 
+                        type="text">
+                        <label>Seller Code</label>
+                    </field>
+
+                    <field id="country_code" 
+                        translate="label" 
+                        sortOrder="10" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1" 
+                        type="text">
+                        <label>Country Code</label>
+                    </field>
+
+                    <field id="terms_block" 
+                        translate="label" 
+                        type="select" 
+                        sortOrder="10" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1">
+                        <label>Block for Terms Content</label>
+                        <source_model>Prymag\PurchaseForm\Model\Config\Source\Block</source_model>
+                    </field>
+
+                    <field id="policy_block" 
+                        translate="label" 
+                        sortOrder="10" 
+                        type="select" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1">
+                        <label>Block for Privacy Policy Content</label>
+                        <source_model>Prymag\PurchaseForm\Model\Config\Source\Block</source_model>
+                    </field>
+                    
+            </group>
+
+            <group 
+                id="analytics" 
+                translate="label" 
+                type="text" 
+                sortOrder="1"
+                showInDefault="1" 
+                showInWebsite="1" 
+                showInStore="1" >
+                <label>Analytics</label>
+
+                <field id="tracking_code" 
+                        translate="label" 
+                        sortOrder="10" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1" 
+                        type="text">
+                        <label>Tracking Code</label>
+                    </field>
+            </group>
+        </section>
+    </system>
+</config>
