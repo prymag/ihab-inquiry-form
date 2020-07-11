@@ -49,6 +49,26 @@
                         <label>Campaign Code</label>
                     </field>
 
+                    <field id="campaign_id" 
+                        translate="label" 
+                        sortOrder="10" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1" 
+                        type="text">
+                        <label>Campaign ID</label>
+                    </field>
+
+                    <field id="entry_id" 
+                        translate="label" 
+                        sortOrder="10" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1" 
+                        type="text">
+                        <label>Entry ID</label>
+                    </field>
+
                     <field id="seller_code" 
                         translate="label" 
                         sortOrder="10" 

@@ -8,22 +8,23 @@ class Analytics extends Base
 
     protected $_template = 'Prymag_PurchaseForm::purchase-form/analytics.phtml';
 
-    protected $_storeManager;
-
     protected $_helper;
 
-    public function getStoreURL()
-    {
-        /** @TODO: Identify $store object */
-        /** @var any $store */
-        $store = $this->_storeManager->getStore();
-        return $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
-    }
-
-    public function getAnalyticsTracking()
+    public function getTrackingCode()
     {
         # code...
         return $this->_helper->getAnalyticsTrackingCode();
+    }
+
+    public function getCategoryVariation()
+    {
+        # code...
+        $seller = $this->getSeller();
+        $campaignCode = $this->getCampaignCode();
+        $campaignId = $this->getCampaignId();
+        $entryId = $this->getEntryId();
+
+        return "CampCode: {$campaignCode} CampId: {$campaignId} EntryId: {$entryId} SellerId: {$seller}";
     }
 
 }

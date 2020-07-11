@@ -34,6 +34,14 @@ class Base extends \Magento\Framework\View\Element\Template
         $this->_dataPersistor = $dataPersistor;
     }
 
+    public function getStoreURL()
+    {
+        /** @TODO: Identify $store object */
+        /** @var any $store */
+        $store = $this->_storeManager->getStore();
+        return $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
+    }
+
     public function makeModal($blockId, $trigger)
     {
         # code...
@@ -90,7 +98,7 @@ class Base extends \Magento\Framework\View\Element\Template
     public function getPolicyBlockId()
     {
         # code...
-        $blockId = $this->getData('policyBlockId');
+        $blockId = $this->getData('policy_block_id');
 
         if(!$blockId || $blockId == '') {
             return $this->_helper->getPolicyBlockId();
@@ -102,7 +110,7 @@ class Base extends \Magento\Framework\View\Element\Template
     public function getTermsBlockId()
     {
         # code...
-        $blockId = $this->getData('termsBlockId');
+        $blockId = $this->getData('terms_block_id');
 
         if(!$blockId || $blockId == '') {
             return $this->_helper->getPolicyBlockId();

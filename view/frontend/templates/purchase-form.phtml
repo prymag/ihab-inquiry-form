@@ -19,40 +19,40 @@
 
     <div class="control control-input">
         <label><?php echo __('Phone');?> *</label>
-        <input name="phone" 
+        <input name="cellphone" 
             type="text" 
             placeholder="<?php echo __('Phone'); ?> *"
-            value="<?php echo $block->getPostValue('phone'); ?>"
+            value="<?php echo $block->getPostValue('cellphone'); ?>"
             data-validate='{"required":true}'
             >
     </div>
 
     <div class="control control-input">
         <label><?php echo __('Firstname');?> *</label>
-        <input name="firstname" 
+        <input name="firstName" 
             type="text" 
             placeholder="<?php echo __('Firstname'); ?> *"
-            value="<?php echo $block->getPostValue('firstname'); ?>"
+            value="<?php echo $block->getPostValue('firstName'); ?>"
             data-validate='{"required":true}'
             >
     </div>
     
     <div class="control control-input">
         <label><?php echo __('Lastname');?> *</label>
-        <input name="lastname" 
+        <input name="lastName" 
             type="text" 
             placeholder="<?php echo __('Lastname'); ?> *"
-            value="<?php echo $block->getPostValue('lastname'); ?>"
+            value="<?php echo $block->getPostValue('lastName'); ?>"
             data-validate='{"required":true}'
             >
     </div>
 
     <div class="control control-input">
         <label><?php echo __('Invoice Address');?> *</label>
-        <input name="invoice_address" 
+        <input name="invoiceAddress" 
             type="text" 
             placeholder="<?php echo __('Invoice Address'); ?> *"
-            value="<?php echo $block->getPostValue('invoice_address'); ?>"
+            value="<?php echo $block->getPostValue('invoiceAddress'); ?>"
             data-validate='{"required":true}'
             >
     </div>
@@ -60,20 +60,20 @@
     <div class="two-col-control">
         <div class="control control-input">
             <label><?php echo __('Postcode');?> *</label>
-            <input name="postcode" 
+            <input name="invoiceZipcode" 
                 type="text" 
                 placeholder="<?php echo __('Postcode'); ?> *"
-                value="<?php echo $block->getPostValue('postcode'); ?>"
+                value="<?php echo $block->getPostValue('invoiceZipcode'); ?>"
                 data-validate='{"required":true}'
                 >
         </div>
 
         <div class="control control-input">
             <label><?php echo __('City');?> *</label>
-            <input name="city" 
+            <input name="invoiceCity" 
                 type="text" 
                 placeholder="<?php echo __('City'); ?> *"
-                value="<?php echo $block->getPostValue('city'); ?>"
+                value="<?php echo $block->getPostValue('invoiceCity'); ?>"
                 data-validate='{"required":true}'
                 >
         </div>
@@ -91,11 +91,11 @@
 
     <div class="control gender control-radio">
         <label>
-            <input name="gender" type="radio" value="male" checked="1">
+            <input name="gender" type="radio" value="1" checked="1">
             <?php echo __('Male');?>
         </label>
         <label>
-            <input name="gender" type="radio" value="female">
+            <input name="gender" type="radio" value="2">
             <?php echo __('Female');?>
         </label>
     </div>
@@ -105,19 +105,19 @@
 
         <div class="control payment-methods control-radio">
             <label>
-                <input name="payment_method" type="radio" value="invoice" checked="1">
+                <input name="paymentMethod" type="radio" value="<?php echo __('Invoice'); ?>" checked="1">
                 <?php echo __('Invoice');?>
             </label>
             <label>
-                <input name="payment_method" type="radio" value="visa">
+                <input name="paymentMethod" type="radio" value="VISA">
                 <img src="<?php echo $block->getViewFileUrl('Prymag_PurchaseForm::images/visa.png'); ?>" />
             </label>
             <label>
-                <input name="payment_method" type="radio" value="mastercard">
+                <input name="paymentMethod" type="radio" value="MC">
                 <img src="<?php echo $block->getViewFileUrl('Prymag_PurchaseForm::images/mastercard.png'); ?>" />
             </label>
             <label>
-                <input name="payment_method" type="radio" value="paypal">
+                <input name="paymentMethod" type="radio" value="PayPal Classic">
                 <img src="<?php echo $block->getViewFileUrl('Prymag_PurchaseForm::images/paypal.jpg'); ?>" />
             </label>
         </div>
@@ -126,18 +126,18 @@
     <div class="control consent control-checkbox">
         <label>
             <input 
-                name="newsletter_subscribe" 
+                name="integrity.EMAIL_INFO" 
                 type="checkbox" 
-                value="1"  
+                
                 data-validate='{"required":true}'
                 />
             <?php echo __('Subscribe to Newsletter');?>
         </label>
         <label>
             <input 
-                name="newsletter_subscribe" 
+                name="GDPR_1" 
                 type="checkbox" 
-                value="1" 
+                
                 data-validate='{"required":true}'
                 />
             <?php 

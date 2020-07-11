@@ -17,16 +17,16 @@
             <parameter name="product_name" xsi:type="text" required="true" visible="true" sort_order="10">
                 <label>Product Name</label>
             </parameter>
-            <parameter name="sku" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="product_sku" xsi:type="text" required="true" visible="true" sort_order="10">
                 <label>SKU</label>
             </parameter>
-            <parameter name="price" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="product_price" xsi:type="text" required="true" visible="true" sort_order="10">
                 <label>Price</label>
             </parameter>
-            <parameter name="shipping" xsi:type="text" visible="true" sort_order="10">
+            <parameter name="product_shipping" xsi:type="text" visible="true" sort_order="10">
                 <label>Shipping</label>
             </parameter>
-            <parameter name="tax" xsi:type="text" visible="true" sort_order="10">
+            <parameter name="product_tax" xsi:type="text" visible="true" sort_order="10">
                 <label>Tax</label>
             </parameter>
 
@@ -42,7 +42,7 @@
                 <label>Conditions</label>
                 <block class="Prymag\PurchaseForm\Block\Adminhtml\Widget\TextArea"/>
             </parameter>
-            <parameter name="termsBlockId" xsi:type="block" visible="true" sort_order="20">
+            <parameter name="terms_block_id" xsi:type="block" visible="true" sort_order="20">
                 <label translate="true">Block for Terms content</label>
                 <description>Leave empty to use default Terms content</description>
                 <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
@@ -53,7 +53,7 @@
                     </data>
                 </block>
             </parameter>
-            <parameter name="policyBlockId" xsi:type="block" visible="true" sort_order="20">
+            <parameter name="policy_block_id" xsi:type="block" visible="true" sort_order="20">
                 <label translate="true">Block for Policy content</label>
                 <description>Leave empty to use default Privacy Policy content</description>
                 <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
