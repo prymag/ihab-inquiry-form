@@ -38,6 +38,26 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
         );
     }
 
+    public function getCampaignId($store = null)
+    {
+        # code...
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_DEFAULTS . 'campaign_id',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
+            $store
+        );
+    }
+
+    public function getEntryId($store = null)
+    {
+        # code...
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_DEFAULTS . 'entry_id',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
+            $store
+        );
+    }
+
     public function getSellerCode($store = null)
     {
         # code...
@@ -78,11 +98,21 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
         );
     }
 
-    public function getAnalyticsTrackingCode($store = null)
+    public function getTrackingCode($store = null)
     {
         # code...
         return $this->scopeConfig->getValue(
             self::XML_PATH_ANALYTICS . 'tracking_code',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
+            $store
+        );
+    }
+
+    public function getTrackingName($store = null)
+    {
+        # code...
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_ANALYTICS . 'tracking_name',
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
             $store
         );

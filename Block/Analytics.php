@@ -8,12 +8,16 @@ class Analytics extends Base
 
     protected $_template = 'Prymag_PurchaseForm::purchase-form/analytics.phtml';
 
-    protected $_helper;
-
     public function getTrackingCode()
     {
         # code...
-        return $this->_helper->getAnalyticsTrackingCode();
+        return $this->_helper->getTrackingCode();
+    }
+
+    public function getTrackingName()
+    {
+        # code...
+        return $this->_helper->getTrackingName();
     }
 
     public function getCategoryVariation()

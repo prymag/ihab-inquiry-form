@@ -70,14 +70,6 @@ class Modal extends Template
         return $this->_trigger;
     }
 
-    public function setTitle($title)
-    {
-        # code...
-        $this->_title = $title;
-
-        return $this;
-    }
-
     public function getTitle()
     {
         # code...

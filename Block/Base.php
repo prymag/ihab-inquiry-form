@@ -5,7 +5,6 @@ namespace Prymag\PurchaseForm\Block;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Framework\ObjectManagerInterface;
-use Magento\Store\Model\StoreManagerInterface;
 use Prymag\PurchaseForm\Helper\Data as Helper;
 
 class Base extends \Magento\Framework\View\Element\Template
@@ -16,31 +15,58 @@ class Base extends \Magento\Framework\View\Element\Template
 
     protected $_helper;
 
-    protected $_storeManager;
-
     public function __construct(
         Context $context,
         DataPersistorInterface $dataPersistor,
         Helper $helper,
         ObjectManagerInterface $objectManager,
-        StoreManagerInterface $storeManager,
         array $data = []
     ) {
         parent::__construct($context, $data);
 
-        $this->_storeManager = $storeManager;
         $this->_helper = $helper;
         $this->_objectManager = $objectManager;
         $this->_dataPersistor = $dataPersistor;
     }
 
+    /**
+     * Get Store
+     * 
+     * @return Magento\Store\Model\StoreManager
+     */
+    public function getStore()
+    {
+        # code...
+        /** @var Magento\Store\Model\StoreManager $store */
+        return $this->_storeManager->getStore();
+    }
+
     public function getStoreURL()
     {
-        /** @TODO: Identify $store object */
-        /** @var any $store */
-        $store = $this->_storeManager->getStore();
-        return $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
+        //
+        return $this->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_LINK);
     }
+
+    /**
+     * @var boolean $asCss - Get result as css background-image
+     */
+    public function getBackgroundImage($asCss = false) {
+        //
+        $backgroundImage = '';
+        if ($this->getData('background_image')) {
+            $type = \Magento\Framework\UrlInterface::URL_TYPE_MEDIA;
+            $mediaUrl = $this->getStore()
+                ->getBaseUrl($type);
+
+            $backgroundImage = $mediaUrl . $this->getData('background_image');
+
+            if ($asCss) {
+                $backgroundImage = "background-image:url('{$backgroundImage}')";
+            }
+        }
+
+        return $backgroundImage;
+	}
 
     public function makeModal($blockId, $trigger)
     {
@@ -73,6 +99,18 @@ class Base extends \Magento\Framework\View\Element\Template
         }
 
         return $this->_helper->getCampaignCode();
+    }
+
+    public function getCampaignId()
+    {
+        # code...
+        return $this->_helper->getCampaignId();
+    }
+
+    public function getEntryId()
+    {
+        # code...
+        return $this->_helper->getEntryId();
     }
 
     public function getSeller()

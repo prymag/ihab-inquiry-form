@@ -132,6 +132,16 @@
                         type="text">
                         <label>Tracking Code</label>
                     </field>
+
+                <field id="tracking_name" 
+                        translate="label" 
+                        sortOrder="10" 
+                        showInDefault="1" 
+                        showInWebsite="1" 
+                        showInStore="1" 
+                        type="text">
+                        <label>Tracking Name</label>
+                    </field>
             </group>
         </section>
     </system>

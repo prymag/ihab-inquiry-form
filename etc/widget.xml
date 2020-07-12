@@ -4,6 +4,24 @@
         <label>Prymag Purchase Form</label>
         <description>Custom Purchase Form</description>
         <parameters>
+
+            <parameter name="background_image" xsi:type="block" visible="true" sort_order="10">
+                <label translate="true">Background Image</label>
+                <block class="Prymag\PurchaseForm\Block\Adminhtml\Widget\ImageChooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+
+            <parameter name="main_content" xsi:type="block" visible="true" sort_order="10">
+                <label>Main Content</label>
+                <description>Use single quotes "'" when dealing with html attributes</description>
+                <block class="Prymag\PurchaseForm\Block\Adminhtml\Widget\TextArea"/>
+            </parameter>
+
             <parameter name="title" xsi:type="text" required="true" visible="true" sort_order="10">
                 <label>Title</label>
             </parameter>
@@ -63,6 +81,11 @@
                         </item>
                     </data>
                 </block>
+            </parameter>
+
+            <parameter name="css_class" xsi:type="text" visible="true" sort_order="10">
+                <label>CSS Class</label>
+                <description>Additional css classes</description>
             </parameter>
         </parameters>
     </widget>

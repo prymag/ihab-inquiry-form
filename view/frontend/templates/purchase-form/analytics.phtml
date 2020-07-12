@@ -4,7 +4,7 @@
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 	
-	ga('create', '<?php echo $block->getTrackingCode(); ?>', '<?php echo $block->getStoreURL(); ?>');
+	ga('create', '<?php echo $block->getTrackingCode(); ?>', '<?php echo $block->getTrackingName(); ?>');
 	ga('send', 'pageview');
 
 	ga('require', 'ecommerce', 'ecommerce.js');
@@ -23,7 +23,7 @@
 		  	'name': '<?php echo $block->getData('product_name'); ?>',    			// Product name. Required.
 		  	'sku': '<?php echo $block->getData('product_sku'); ?>',             	// SKU/code.
 		  	'category': '<?php echo $block->getCategoryVariation(); ?>',	// Category or variation.
-		  	'price': '<?php $block->getData('product_price'); ?>',                 	// Unit price.
+		  	'price': '<?php echo $block->getData('product_price'); ?>',                 	// Unit price.
 		  	'quantity': '1'                		// Quantity.
 			});
 		
