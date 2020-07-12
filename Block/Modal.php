@@ -38,7 +38,11 @@ class Modal extends Template
     {
         # code...
         if (!$this->_block) {
-            $this->_block = $this->_blockRepository->getById($this->_contentBlockId); 
+            try {
+                $this->_block = $this->_blockRepository->getById($this->_contentBlockId); 
+            } catch (\Magento\Framework\Exception\NoSuchEntityException $e) {
+                
+            }
         }
 
         return $this->_block;
@@ -73,12 +77,20 @@ class Modal extends Template
     public function getTitle()
     {
         # code...
+        if (!$this->getCMSBlock()) {
+            return '';
+        }
+
         return $this->getCMSBlock()->getTitle();
     }
 
     public function getContent()
     {
         # code...
+        if (!$this->getCMSBlock()) {
+            return '';
+        }
+
         return $this->getCMSBlock()->getContent();
     }
 
