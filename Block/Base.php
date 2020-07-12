@@ -151,7 +151,7 @@ class Base extends \Magento\Framework\View\Element\Template
         $blockId = $this->getData('terms_block_id');
 
         if(!$blockId || $blockId == '') {
-            return $this->_helper->getPolicyBlockId();
+            return $this->_helper->getTermsBlockId();
         }
 
         return $blockId;
