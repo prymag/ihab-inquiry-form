@@ -105,4 +105,9 @@
         <label>Prymag Purchase Form Mobile</label>
         <description>Mobile placement for the main purchase form. Make sure that the main form is also in the same page</description>
     </widget>
+
+    <widget class="Prymag\PurchaseForm\Block\Widget\Analytics" id="prymag_purchase_form_analytics">
+        <label>Prymag Purchase Form Analytics</label>
+        <description>Analytics for capturing successful conversion. Place this on the success page.</description>
+    </widget>
 </widgets>

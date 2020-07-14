@@ -162,6 +162,11 @@
         <?php echo htmlspecialchars_decode($block->getData('conditions_text'));?>
     </div>
 
-    <?php echo $block->getAnalyticsSection(); ?>
+    <?php 
+        $dataPersistor = $block->getDataPersistor();
+        $dataPersistor->clear('purchase_form_analytics');
+        $dataPersistor->set('purchase_form_analytics', $block->getData());
+    ?>
+    <?php //echo $block->getAnalyticsSection(); ?>
 </form>
 

@@ -41,6 +41,12 @@ class Base extends \Magento\Framework\View\Element\Template
         return $this->_storeManager->getStore();
     }
 
+    public function getDataPersistor()
+    {
+        # code...
+        return $this->_dataPersistor;
+    }
+
     public function getStoreURL()
     {
         //

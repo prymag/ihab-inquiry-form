@@ -1,0 +1,17 @@
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Prymag_PurchaseForm/js/analytics": {
+                    "ajaxUrl": "<?php echo $block->getAjaxUrl(); ?>",
+                    "trackingCode": "<?php echo $block->getTrackingCode(); ?>",
+                    "trackingName": "<?php echo $block->getTrackingName(); ?>",
+                    "seller": "<?php echo $block->getSeller(); ?>",
+                    "entryId": "<?php echo $block->getEntryId(); ?>",
+                    "campaignId": "<?php echo $block->getCampaignId(); ?>",
+                    "campaignCode": "<?php echo $block->getCampaignCode(); ?>"
+                }
+            }
+        }
+</script>
+
+<div class="dummy-block"></div>

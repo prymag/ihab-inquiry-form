@@ -1,12 +1,22 @@
 <?php
 
-namespace Prymag\PurchaseForm\Block;
+namespace Prymag\PurchaseForm\Block\Widget;
 
-class Analytics extends Base
+use Prymag\PurchaseForm\Block\Base;
+use Magento\Widget\Block\BlockInterface; 
+
+
+class Analytics extends Base implements BlockInterface 
 {
     protected $_title = '';
 
-    protected $_template = 'purchase-form/analytics.phtml';
+    protected $_template = 'analytics.phtml';
+
+    public function getAjaxUrl()
+    {
+        # code...
+        return $this->getUrl("prymag/ajax/analytics");
+    }
 
     public function getTrackingCode()
     {
