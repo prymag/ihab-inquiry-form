@@ -48,4 +48,12 @@ class Form extends Base
             ->setData($this->getData())
             ->toHtml();
     }
+
+    public function getMobileButton()
+    {
+        # code...
+        return $this->_objectManager
+            ->create(SmsButton::class)
+            ->toHtml();
+    }
 }

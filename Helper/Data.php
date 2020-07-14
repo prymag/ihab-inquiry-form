@@ -117,7 +117,15 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
             $store
         );
     }
-
-
+    
+    public function getSMSNumber($store = null)
+    {
+        # code...
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_ANALYTICS . 'sms_number',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
+            $store
+        );
+    }
 
 }

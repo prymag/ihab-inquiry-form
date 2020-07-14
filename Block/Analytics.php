@@ -6,7 +6,7 @@ class Analytics extends Base
 {
     protected $_title = '';
 
-    protected $_template = 'Prymag_PurchaseForm::purchase-form/analytics.phtml';
+    protected $_template = 'purchase-form/analytics.phtml';
 
     public function getTrackingCode()
     {

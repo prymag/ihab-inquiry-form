@@ -1,103 +1,140 @@
-.prymag-purchase-form {
-    
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+// Mobile
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    // your code
+    .prymag-purchase-form {
+        background-image: none !important;
 
-    .main-content-wrapper {
-        position: relative;
-        width: 100%;
-
-        .content {
-
+        .form-main {
+            width:100%;
         }
     }
+}
 
-    .form-main {
-        padding: 10px;
-        width:100%;
-        max-width:400px;
-        margin-left: auto;
+// Desktop
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    // your code
+    .prymag-purchase-form {
+        background-image: inherit;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .main-content-wrapper {
+            .main-content {
+                .main-image {
+                    display:none;
+                }
+            }
+        }
+
+        .form-main {
+            width: 400px;
+        }
+    }
+}
+
+& when (@media-common = true) {
+    // your code
+    .prymag-purchase-form {
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+
+        .main-content-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .form-main {
+            padding: 10px;
+            margin-left: auto;
+    
+            .product-info {
+                margin-bottom:10px;
         
-        .product-info {
-            margin-bottom:10px;
-    
-            .title,
-            .desc {
-                display:inline;
-            }
-        }
-    
-        .two-col-control {
-            
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-    
-            .control {
-                width:50%;
-    
-                &:first-child {
-                    margin-right: 10px;
+                .title,
+                .desc {
+                    display:inline;
                 }
             }
-        }
-    
-        .control {
-            margin-bottom: 10px;
-    
-            &.gender {
-                label {
-                    margin-right: 15px;
-                }
-            }
-            &.payment-methods {
+        
+            .two-col-control {
+                
                 display: -webkit-box;
-                display: -ms-flexbox;                
+                display: -ms-flexbox;
                 display: flex;
-                -webkit-box-align: center;
-                    -ms-flex-align: center;
-                        align-items: center;
-    
-                label {
+        
+                .control {
+                    width:50%;
+        
+                    &:first-child {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        
+            .control {
+                margin-bottom: 10px;
+        
+                &.gender {
+                    label {
+                        margin-right: 15px;
+                    }
+                }
+                &.payment-methods {
                     display: -webkit-box;
                     display: -ms-flexbox;                
                     display: flex;
-                    margin-right: 15px;
                     -webkit-box-align: center;
                         -ms-flex-align: center;
                             align-items: center;
+        
+                    label {
+                        display: -webkit-box;
+                        display: -ms-flexbox;                
+                        display: flex;
+                        margin-right: 15px;
+                        -webkit-box-align: center;
+                            -ms-flex-align: center;
+                                align-items: center;
+                    }
+        
+                    img {
+                        max-height: 20px;
+                    }
                 }
-    
-                img {
-                    max-height: 20px;
+        
+                &.control-checkbox {
+                    input[type="checkbox"] {
+                        margin: 0;
+                        vertical-align: middle;
+                        top: 0;
+                    }
+                }
+        
+                &.consent label {
+                    display:block;
+
+                    input {
+                        margin-right: 10px;
+                    }
                 }
             }
-    
-            &.control-checkbox {
-                input[type="checkbox"] {
-                    margin: 0;
-                    vertical-align: middle;
-                    top: 0;
+        
+            .action {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .sms-button {
+                &.hidden {
+                    display:none;
                 }
             }
-    
-            &.consent label {
-                display:inline-block;
+        
+            .conditions-text {
+                font-size:0.9em;
             }
-        }
-    
-        .action {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-    
-        .conditions-text {
-            font-size:0.9em;
         }
     }
-
 }

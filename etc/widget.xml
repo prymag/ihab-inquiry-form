@@ -87,6 +87,22 @@
                 <label>CSS Class</label>
                 <description>Additional css classes</description>
             </parameter>
+
+            <parameter name="sms_number" xsi:type="text" visible="true" sort_order="10">
+                <label>SMS Number</label>
+                <description>Leave empty to use default</description>
+            </parameter>
+
+            <parameter name="sms_body" xsi:type="text" visible="true" sort_order="10">
+                <label>SMS Body</label>
+                <description>Content placed on the SMS message</description>
+            </parameter>
+
         </parameters>
+    </widget>
+
+    <widget class="Prymag\PurchaseForm\Block\Widget\MobilePlaceholder" id="prymag_purchase_form_mobile">
+        <label>Prymag Purchase Form Mobile</label>
+        <description>Mobile placement for the main purchase form. Make sure that the main form is also in the same page</description>
     </widget>
 </widgets>

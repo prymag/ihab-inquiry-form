@@ -1,0 +1,33 @@
+<?php
+    /**
+     * Purchase Form Mobile Placeholder
+     * 
+     * this is a quick fix for now. Proper implementation should be to use magento 2 sections.
+     * 
+     * 
+     */
+?>
+<div class="prymag-purchase-form mobile-placeholder"></div>
+
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function($){
+        function adjustFormPosition() {
+            //
+            if($(window).width() < 768 && $('.prymag-purchase-form.mobile-placeholder').length){
+                //append to the p  
+                $('.form-main').appendTo('.prymag-purchase-form.mobile-placeholder');
+            }
+
+            if ($(window).width() > 768) {
+                $('.form-main').appendTo('.form-wrapper');
+            }
+        }
+
+        $(document).ready( function() {
+            adjustFormPosition();
+        });
+        $(window).on('resize', function() {
+            adjustFormPosition();
+        });
+    });
+</script>

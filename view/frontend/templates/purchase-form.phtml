@@ -2,9 +2,11 @@
     style="<?php echo $block->getBackgroundImage(1); ?>">
     <div class="main-content-wrapper">
         <div class="main-content">
+            <img src="<?php echo $block->getBackgroundImage(); ?>" class="main-image" />
             <?php echo htmlspecialchars_decode($block->getData('main_content')); ?>
         </div>
     </div>
-    <?php echo $block->getForm(); ?>
+    <div class="form-wrapper">
+        <?php echo $block->getForm(); ?>
+    </div>
 </div>
-
