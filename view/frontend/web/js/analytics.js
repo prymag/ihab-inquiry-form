@@ -20,6 +20,10 @@ define([
             type: "GET"
         }).done(function (data) {
             //
+            if (!data) {
+                return;
+            }
+
             ga('create', config.trackingCode, config.trackingName);
             ga('send', 'pageview');
 

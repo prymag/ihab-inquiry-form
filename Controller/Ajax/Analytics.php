@@ -28,6 +28,7 @@ class Analytics extends \Magento\Framework\App\Action\Action
 	{
         $resultJson = $this->_jsonFactory->create();
         $response = $this->_dataPersistor->get('purchase_form_analytics');
+        $this->_dataPersistor->clear('purchase_form_analytics');
         return $resultJson->setData($response);
 	}
 }
