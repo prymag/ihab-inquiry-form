@@ -54,6 +54,7 @@ class Form extends Base
         # code...
         return $this->_objectManager
             ->create(SmsButton::class)
+            ->setData($this->getData())
             ->toHtml();
     }
 }

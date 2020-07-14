@@ -98,6 +98,16 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
         );
     }
 
+    public function getSMSNumber($store = null)
+    {
+        # code...
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_DEFAULTS . 'sms_number',
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
+            $store
+        );
+    }
+
     public function getTrackingCode($store = null)
     {
         # code...
@@ -118,14 +128,4 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
         );
     }
     
-    public function getSMSNumber($store = null)
-    {
-        # code...
-        return $this->scopeConfig->getValue(
-            self::XML_PATH_ANALYTICS . 'sms_number',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
-            $store
-        );
-    }
-
 }
