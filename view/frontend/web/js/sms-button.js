@@ -9,15 +9,20 @@ define([
     }
 
     function isIOS() {
-        return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+        return navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
     }
 
     function willShowSmsButton() {
         //
+        
         if (isMobile()) {
             $('.sms-button').removeClass('hidden');
         } else {
             $('.sms-button').addClass('hidden');
+        }
+
+        if (isIOS() !== null) {
+            $('.action .action-info').removeClass('hidden');
         }
     }
 
@@ -25,7 +30,7 @@ define([
         $(window).on('resize', function() {
             willShowSmsButton();
         });
-
+        
         willShowSmsButton();
 
         $('.send-sms').on('click', function() {
@@ -33,8 +38,11 @@ define([
             var smsNumber = $(this).data('sms_number');
             var smsBody = $(this).data('sms_body');
             
-            var separator = isIOS() ? ';' : '?';
-            var link = `sms:${smsNumber}${separator}body=${smsBody}`;
+            var link = `sms:${smsNumber}`;
+
+            if (isIOS() === null) {
+                link = link + `?body=${smsBody}`
+            }
 
             window.open(link);
         });

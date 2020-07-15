@@ -7,7 +7,9 @@
             <i class="fa fa-mobile"></i>
             <?php echo __('Order via SMS'); ?>
         </span>
-        <span class="action-info"><?php echo __("Print <strong>%1</strong>", $block->getData('sms_body')); ?></span>
+        <span class="action-info hidden">
+            <?php echo __("Print Body"); ?>
+            <strong><?php echo $block->getData('sms_body'); ?></strong>
     </button>
 </div>
 
