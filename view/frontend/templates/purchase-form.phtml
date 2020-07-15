@@ -1,8 +1,8 @@
 <div class="prymag-purchase-form <?php echo $block->getData('css_class'); ?>" 
     style="<?php echo $block->getBackgroundImage(1); ?>">
     <div class="main-content-wrapper">
+		<img src="<?php echo $block->getBackgroundImage(); ?>" class="main-image" />
         <div class="main-content">
-            <img src="<?php echo $block->getBackgroundImage(); ?>" class="main-image" />
             <?php echo htmlspecialchars_decode($block->getData('main_content')); ?>
         </div>
     </div>
