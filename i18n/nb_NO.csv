@@ -13,7 +13,9 @@ Invoice,Invoice
 Terms,vilkårene
 "Privacy Policy","personvern"
 "I agree to the %1 and have read the %2","Jeg er enig i %1 og har lest %2"
-"Buy Now!","Kjøp nå!"
+"Buy Now!","Kjøp nå!",
+"Order via SMS","Bestill via SMS",
+"Print Body","Skrit"
 Close,Close
 Prymag,Prymag
 "Purchase Form","Purchase Form"

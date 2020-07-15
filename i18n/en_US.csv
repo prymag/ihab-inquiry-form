@@ -13,8 +13,9 @@ Invoice,Invoice
 Terms,Terms
 "Privacy Policy","Privacy Policy"
 "I agree to the %1 and have read the %2","I agree to the %1 and have read the %2"
-"Buy Now!","Buy Now!"
-"<?php echo $block->getTitle(); ?>","<?php echo $block->getTitle(); ?>"
+"Buy Now!","Buy Now!",
+"Print Body","Print"
+"Order via SMS","Order via SMS"
 Close,Close
 Prymag,Prymag
 "Purchase Form","Purchase Form"
