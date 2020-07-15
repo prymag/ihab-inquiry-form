@@ -3,8 +3,11 @@
         data-sms_number="<?php echo $block->getSMSNumber();?>" 
         data-sms_body="<?php echo $block->getData('sms_body'); ?>"
         class="action send-sms">
-        <i class="fa fa-mobile"></i>
-        <?php echo __('Order via SMS'); ?>
+        <span class="action-name">
+            <i class="fa fa-mobile"></i>
+            <?php echo __('Order via SMS'); ?>
+        </span>
+        <span class="action-info"><?php echo __("Print <strong>%1</strong>", $block->getData('sms_body')); ?></span>
     </button>
 </div>
 
