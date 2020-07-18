@@ -16,51 +16,51 @@
                 </block>
             </parameter>
 
-            <parameter name="main_content" xsi:type="block" visible="true" sort_order="10">
+            <parameter name="main_content" xsi:type="block" visible="true" sort_order="11">
                 <label>Main Content</label>
                 <description>Use single quotes "'" when dealing with html attributes</description>
                 <block class="Prymag\PurchaseForm\Block\Adminhtml\Widget\TextArea"/>
             </parameter>
 
-            <parameter name="title" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="title" xsi:type="text" required="true" visible="true" sort_order="12">
                 <label>Title</label>
             </parameter>
-            <parameter name="short_desc" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="short_desc" xsi:type="text" required="true" visible="true" sort_order="13">
                 <label>Short Description</label>
             </parameter>
-            <parameter name="page_code" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="page_code" xsi:type="text" required="true" visible="true" sort_order="14">
                 <label>Page Code</label>
             </parameter>
 
-            <parameter name="product_name" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="product_name" xsi:type="text" required="true" visible="true" sort_order="15">
                 <label>Product Name</label>
             </parameter>
-            <parameter name="product_sku" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="product_sku" xsi:type="text" required="true" visible="true" sort_order="16">
                 <label>SKU</label>
             </parameter>
-            <parameter name="product_price" xsi:type="text" required="true" visible="true" sort_order="10">
+            <parameter name="product_price" xsi:type="text" required="true" visible="true" sort_order="17">
                 <label>Price</label>
             </parameter>
-            <parameter name="product_shipping" xsi:type="text" visible="true" sort_order="10">
+            <parameter name="product_shipping" xsi:type="text" visible="true" sort_order="18">
                 <label>Shipping</label>
             </parameter>
-            <parameter name="product_tax" xsi:type="text" visible="true" sort_order="10">
+            <parameter name="product_tax" xsi:type="text" visible="true" sort_order="19">
                 <label>Tax</label>
             </parameter>
 
-            <parameter name="seller_code" xsi:type="text" visible="true" sort_order="10">
+            <parameter name="seller_code" xsi:type="text" visible="true" sort_order="20">
                 <label>Seller Code</label>
                 <description>Leave empty to use default Seller Code</description>
             </parameter>
-            <parameter name="country_code" xsi:type="text" visible="true" sort_order="10">
+            <parameter name="country_code" xsi:type="text" visible="true" sort_order="21">
                 <label>Country Code</label>
                 <description>Leave empty to use default Country Code</description>
             </parameter>
-            <parameter name="conditions_text" xsi:type="block" required="true" visible="true" sort_order="10">
+            <parameter name="conditions_text" xsi:type="block" required="true" visible="true" sort_order="22">
                 <label>Conditions</label>
                 <block class="Prymag\PurchaseForm\Block\Adminhtml\Widget\TextArea"/>
             </parameter>
-            <parameter name="terms_block_id" xsi:type="block" visible="true" sort_order="20">
+            <parameter name="terms_block_id" xsi:type="block" visible="true" sort_order="23">
                 <label translate="true">Block for Terms content</label>
                 <description>Leave empty to use default Terms content</description>
                 <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
@@ -71,7 +71,7 @@
                     </data>
                 </block>
             </parameter>
-            <parameter name="policy_block_id" xsi:type="block" visible="true" sort_order="20">
+            <parameter name="policy_block_id" xsi:type="block" visible="true" sort_order="24">
                 <label translate="true">Block for Policy content</label>
                 <description>Leave empty to use default Privacy Policy content</description>
                 <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
@@ -83,17 +83,17 @@
                 </block>
             </parameter>
 
-            <parameter name="css_class" xsi:type="text" visible="true" sort_order="10">
+            <parameter name="css_class" xsi:type="text" visible="true" sort_order="25">
                 <label>CSS Class</label>
                 <description>Additional css classes</description>
             </parameter>
 
-            <parameter name="sms_number" xsi:type="text" visible="true" sort_order="10">
+            <parameter name="sms_number" xsi:type="text" visible="true" sort_order="26">
                 <label>SMS Number</label>
                 <description>Leave empty to use default</description>
             </parameter>
 
-            <parameter name="sms_body" xsi:type="text" visible="true" sort_order="10">
+            <parameter name="sms_body" xsi:type="text" visible="true" sort_order="27">
                 <label>SMS Body</label>
                 <description>Content placed on the SMS message</description>
             </parameter>
