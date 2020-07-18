@@ -5,7 +5,9 @@
     data-mage-init='{"validation":{}}'>
 
     <input type="hidden" name="merchant" value="<?php echo $block->getMerchant(); ?>" />
-    <input type="hidden" name="page" value="<?php echo $block->getPage(); ?>" />
+    <?php if (!$block->isMultiple()): ?>
+        <input type="hidden" name="page" value="<?php echo $block->getPage(); ?>" />
+    <?php endif; ?>
     <input type="hidden" name="campaignCode" value="<?php echo $block->getCampaignCode(); ?>" />
     <input type="hidden" name="seller" value="<?php echo $block->getSeller(); ?>" />
     <input type="hidden" name="country" value="<?php echo $block->getCountry(); ?>" />
@@ -16,6 +18,20 @@
             <div class="desc"> - <?php echo $block->getData('short_desc'); ?></div>
         <?php endif; ?>
     </div>
+
+    <?php if ($block->isMultiple()):?>
+    <div class="control control-multiple">
+        <?php 
+            foreach($block->getPageMultiple() as $key => $control): 
+                $checked = $key === 0 ? 'checked' : '';    
+        ?>    
+                <label>
+                    <input name="page" type="radio" value="<?php echo $control[0] ?>" <?php echo $checked; ?>>
+                    <?php echo $control[1]; ?>
+                </label>
+        <?php endforeach ?>
+    </div>
+    <?php endif; ?>
 
     <div class="control control-input">
         <label><?php echo __('Phone');?> *</label>

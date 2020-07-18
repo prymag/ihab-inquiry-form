@@ -30,6 +30,7 @@
             </parameter>
             <parameter name="page_code" xsi:type="text" required="true" visible="true" sort_order="10">
                 <label>Page Code</label>
+                <description>For multiple values use comma separated format "VALUE:LABEL" i.e "aquamin-60:AQUAMIN,estrogain:ESTROGAIN"</description>
             </parameter>
 
             <parameter name="product_name" xsi:type="text" required="true" visible="true" sort_order="10">

@@ -162,4 +162,23 @@ class Base extends \Magento\Framework\View\Element\Template
 
         return $blockId;
     }
+
+    public function isMultiple()
+    {
+        # code...
+        return strpos($this->getData('page_code'), ',') !== false;
+    }
+
+    public function getPageMultiple()
+    {
+        # code...
+        $data = explode(',', $this->getData('page_code'));
+
+        $pages = [];
+        foreach ($data as $entries) {
+            $pages[] = explode(':', $entries);
+        }
+
+        return $pages;
+    }
 }
