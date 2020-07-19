@@ -27,7 +27,7 @@
         ?>    
                 <label>
                     <input name="page" type="radio" value="<?php echo $control[0] ?>" <?php echo $checked; ?>>
-                    <?php echo $control[1]; ?>
+                    <?php echo htmlspecialchars_decode($control[1]); ?>
                 </label>
         <?php endforeach ?>
     </div>
