@@ -3,9 +3,40 @@
     // your code
     .prymag-purchase-form {
         background-image: none !important;
+		
+		
+		.main-content-wrapper {
+			display: block;
+			
+		}
+		.form-wrapper {
+			width: 100%;
+		}
+    }
+}
 
-        .form-main {
-            width:100%;
+//
+//  Tablet (for the front-end)
+//  _____________________________________________
+@media only screen and (max-width: @screen__m) {
+    // your code
+	.prymag-purchase-form {
+		
+        background-image: none !important;
+		
+		.main-content-wrapper {
+			display: flex;
+			flex-direction: column;
+			
+			
+			.main-image {
+				display:block !important;
+			}
+			.main-content {
+				position: relative !important;
+				width: 100% !important;
+				height: 100%;
+			}
         }
     }
 }
@@ -14,29 +45,49 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     // your code
     .prymag-purchase-form {
+		display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+		
         background-image: inherit;
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: left center;
 
         .main-content-wrapper {
+			width: 100%;
+			
 			.main-image {
 				display:none;
 			}
+			.main-content {
+				max-width: 100%;
+				position: absolute;
+				top: 1%;
+				left:0;
+				right:0;
+				margin: auto;
+				padding: 10px;
+				width: 90%;
+				color: #ffffff;
+			
+			}
         }
+		
+		.form-wrapper {
+			width: 100%;
+			max-width: 450px;
+		}
 
-        .form-main {
-            width: 400px;
-        }
+		
+        
     }
 }
 
 & when (@media-common = true) {
     // your code
     .prymag-purchase-form {
-        display:-webkit-box;
-        display:-ms-flexbox;
-        display:flex;
+        
 
         .main-content-wrapper {
             position: relative;

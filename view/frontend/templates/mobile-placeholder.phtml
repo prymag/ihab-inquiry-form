@@ -13,12 +13,12 @@
     require(['jquery', 'jquery/ui'], function($){
         function adjustFormPosition() {
             //
-            if($(window).width() < 768 && $('.prymag-purchase-form.mobile-placeholder').length){
+            if($(window).width() < 767 && $('.prymag-purchase-form.mobile-placeholder').length){
                 //append to the p  
                 $('.form-main').appendTo('.prymag-purchase-form.mobile-placeholder');
             }
 
-            if ($(window).width() > 768) {
+            if ($(window).width() > 767) {
                 $('.form-main').appendTo('.form-wrapper');
             }
         }
