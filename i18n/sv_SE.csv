@@ -1,0 +1,38 @@
+Phone,Mobiletelefon
+Firstname,Förnamn
+Lastname,Efternamn
+"Invoice Address","Gatuadress (endast Sverige)"
+Postcode,Postnr
+"Invoice City",Ort
+Email,Epost
+Male,Mann
+Female,Kvinne
+"Payment Method","Välj betalningssätt"
+Invoice,Invoice
+"Subscribe to Newsletter","Jag vill ha nyhetsbrev!"
+Terms,köpvillkoren
+"Privacy Policy","behandling av personuppgfiter"
+"I agree to the %1 and have read the %2","Jag bekräftar att jag har läst %1 och %2"
+"Buy Now!","Beställ nu!",
+"Order via SMS","Bestill via SMS",
+"Print Body","Skrit"
+Close,Close
+Prymag,Prymag
+"Purchase Form","Purchase Form"
+Defaults,Defaults
+"Merchant Key","Merchant Key"
+"POST URL","POST URL"
+"Campaign Code","Campaign Code"
+"Campaign ID","Campaign ID"
+"Entry ID","Entry ID"
+"Seller Code","Seller Code"
+"Country Code","Country Code"
+"Block for Terms Content","Block for Terms Content"
+"Block for Privacy Policy Content","Block for Privacy Policy Content"
+Analytics,Analytics
+"Tracking Code","Tracking Code"
+"Tracking Name","Tracking Name"
+"Background Image","Background Image"
+"Block for Terms content","Block for Terms content"
+"Select Block...","Select Block..."
+"Block for Policy content","Block for Policy content"
